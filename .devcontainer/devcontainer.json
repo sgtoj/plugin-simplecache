@@ -1,0 +1,71 @@
+{
+    "name": "mpz",
+    "dockerFile": "./Dockerfile",
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:2.11.0": {},
+        "ghcr.io/devcontainers/features/go:1": {},
+        "ghcr.io/lukewiwa/features/shellcheck:0": {}
+    },
+    "mounts": [
+        "source=${localEnv:HOME}/.aws,target=/home/vscode/.aws,type=bind,consistency=cached"
+    ],
+    "containerEnv": {
+        "AWS_DEFAULT_REGION": "us-east-1",
+        "AWS_REGION": "us-east-1"
+    },
+    "remoteEnv": {
+        "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}",
+        "PATH": "${containerEnv:PATH}:/home/vscode/.arkade/bin/"
+    },
+    "workspaceMount": "source=${localWorkspaceFolder}/..,target=/workspaces,type=bind,consistency=cached",
+    "workspaceFolder": "/workspaces/plugin-simplecache",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "darkriszty.markdown-table-prettify",
+                "eamodio.gitlens",
+                "editorconfig.editorconfig",
+                "github.copilot",
+                "github.copilot-chat",
+                "github.vscode-github-actions",
+                "github.vscode-pull-request-github",
+                "golang.go",
+                "ms-azuretools.vscode-docker",
+                "timonwong.shellcheck",
+                "visualstudioexptteam.vscodeintellicode"
+            ],
+            "settings": {
+                "editor.codeActionsOnSave": {
+                    "source.fixAll": "always"
+                },
+                "editor.formatOnSave": true,
+                "editor.formatOnType": false,
+                "editor.inlineSuggest.enabled": true,
+                "files.exclude": {
+                    "**/.git": true,
+                    "**/.svn": true,
+                    "**/.hg": true,
+                    "**/CVS": true,
+                    "**/.DS_Store": true,
+                    "**/.terraform": true,
+                    "**/*.tfstate*": true,
+                    "**/*.planfile": true,
+                    "**/build-harness": true,
+                    "**/.build-harness": true,
+                    "components/**/.terraform": true,
+                    "components/**/*.terraform.tfvars*": true
+                },
+                "terminal.integrated.scrollback": 4096,
+                "terminal.integrated.env.linux": {
+                    "GIT_EDITOR": "vim"
+                },
+                "terminal.integrated.shell.linux": "/bin/bash",
+                "[markdown]": {
+                    "editor.rulers": [
+                        80
+                    ]
+                }
+            }
+        }
+    }
+}
