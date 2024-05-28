@@ -1,6 +1,6 @@
 # cachecontrol: HTTP Caching Parser and Interpretation
 
-[![PkgGoDev](https://pkg.go.dev/badge/github.com/pquerna/cachecontrol?tab=doc)](https://pkg.go.dev/github.com/pquerna/cachecontrol?tab=doc)[![Build Status](https://travis-ci.org/pquerna/cachecontrol.svg?branch=main)](https://travis-ci.org/pquerna/cachecontrol) 
+[![PkgGoDev](https://pkg.go.dev/badge/github.com/pquerna/cachecontrol?tab=doc)](https://pkg.go.dev/github.com/pquerna/cachecontrol?tab=doc)[![Build Status](https://travis-ci.org/pquerna/cachecontrol.svg?branch=main)](https://travis-ci.org/pquerna/cachecontrol)
 
 `cachecontrol` implements [RFC 7234](http://tools.ietf.org/html/rfc7234) __Hypertext Transfer Protocol (HTTP/1.1): Caching__.  It does this by parsing the `Cache-Control` and other headers, providing information about requests and responses -- but `cachecontrol` does not implement an actual cache backend, just the control plane to make decisions about if a particular response is cachable.
 
@@ -98,7 +98,7 @@ Please [open issues in Github](https://github.com/pquerna/cachecontrol/issues) f
 
 `cachecontrol` has recieved significant contributions from:
 
-* [Paul Querna](https://github.com/pquerna) 
+* [Paul Querna](https://github.com/pquerna)
 
 ## License
 

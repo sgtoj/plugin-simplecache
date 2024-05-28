@@ -1,5 +1,5 @@
-// Package plugin_simplecache is a plugin to cache responses to disk.
-package plugin_simplecache
+// Package simplecache is a plugin to cache responses to disk.
+package simplecache
 
 import (
 	"context"
