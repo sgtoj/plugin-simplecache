@@ -1,7 +1,9 @@
 displayName: Simple Cache (Fork)
-summary: Simple cache plugin middleware caches responses on disk.
 type: middleware
+
 import: github.com/sgtoj/plugin-simplecache
-compatibility: TODO
+
+summary: Simple cache plugin middleware caches responses on disk.
+
 testData:
   path: /tmp

@@ -1,4 +1,4 @@
-.PHONY: lint test vendor clean docker
+.PHONY: lint test vendor clean
 
 export GO111MODULE=on
 
@@ -18,6 +18,3 @@ vendor:
 
 clean:
 	rm -rf ./vendor
-
-docker:
-	docker compose up

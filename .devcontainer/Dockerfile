@@ -29,6 +29,9 @@ RUN SYSTEM_ARCH=$(dpkg --print-architecture) \
     && curl -sL "https://go.dev/dl/go${GOLANG_VERSION}.linux-${SYSTEM_ARCH}.tar.gz" | tar -C /usr/local -xzf - \
     && /usr/local/go/bin/go install -v golang.org/x/tools/gopls@latest
 
+ARG YAEGI_VERSION=0.16.1
+RUN curl -sfL https://raw.githubusercontent.com/traefik/yaegi/master/install.sh | bash -s -- -b $(go env GOPATH)/bin ${YAEGI_VERSION}
+
 # arkade
 RUN curl -sLS https://get.arkade.dev | sh
 
