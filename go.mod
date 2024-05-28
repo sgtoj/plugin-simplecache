@@ -1,4 +1,4 @@
-module github.com/iamolegga/plugin-simplecache
+module github.com/sgtoj/plugin-simplecache
 
 go 1.15
 

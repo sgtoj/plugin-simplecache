@@ -7,6 +7,7 @@ import (
 	"errors"
 	"log"
 	"net/http"
+	"strings"
 	"time"
 
 	"github.com/pquerna/cachecontrol"
@@ -134,6 +135,17 @@ func (m *cache) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 func (m *cache) cacheable(r *http.Request, w http.ResponseWriter, status int) (time.Duration, bool) {
 	reasons, expireBy, err := cachecontrol.CachableResponseWriter(r, status, w, cachecontrol.Options{})
 	if err != nil || len(reasons) > 0 {
+		if err != nil {
+			log.Printf("error checking cacheability: %v", err)
+		}
+		if len(reasons) > 0 {
+			reasonStrs := make([]string, len(reasons))
+			for i, reason := range reasons {
+				reasonStrs[i] = reason.String()
+			}
+
+			log.Printf("response not cacheable: reasons: %s", strings.Join(reasonStrs, ", "))
+		}
 		return 0, false
 	}
 
